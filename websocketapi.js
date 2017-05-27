@@ -1,3 +1,4 @@
+// huobi api demo
 let WebSocket = require('ws');
 let pako = require('pako');
 
