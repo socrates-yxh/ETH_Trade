@@ -3,7 +3,7 @@ let WebSocket = require('ws');
 let pako = require('pako');
 
 let symbol = 'btccny';
-const socket = new WebSocket('ws://be.huobi.com/ws'); // TODO use the right URL here
+const socket = new WebSocket('ws://be.huobi.com/ws'); 
 socket.binaryType = 'arraybuffer';
 
 socket.onopen = function (event) {
