@@ -22,9 +22,8 @@ SECRET_KEY = ""
 
 
 # API 请求地址
-MARKET_URL = "be.huobi.com"
-TRADE_URL = "be.huobi.com"
-
+MARKET_URL = "https://be.huobi.com"
+TRADE_URL = "https://be.huobi.com"
 
 
 def http_get_request(url, params, add_to_headers=None):
@@ -59,10 +58,10 @@ def http_post_request(url, params, add_to_headers=None):
 def api_key_get(params, request_path):
     method = 'GET'
     timestamp = datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%S')
-    params = {'AccessKeyId': ACCESS_KEY,
-              'SignatureMethod': 'HmacSHA256',
-              'SignatureVersion': '2',
-              'Timestamp': timestamp}
+    params.update({'AccessKeyId': ACCESS_KEY,
+                   'SignatureMethod': 'HmacSHA256',
+                   'SignatureVersion': '2',
+                   'Timestamp': timestamp})
 
     host_url = TRADE_URL
     host_name = urllib.parse.urlparse(host_url).hostname
