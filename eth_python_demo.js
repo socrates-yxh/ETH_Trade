@@ -2,8 +2,9 @@
 let WebSocket = require('ws');
 let pako = require('pako');
 
-let symbol = 'btccny';
-const socket = new WebSocket('ws://be.huobi.com/ws'); 
+let symbol = 'ethcny';
+const socket = new WebSocket('wss://be.huobi.com/ws'); //如果symbol = 'btccny'或者'ltccny' 请使用wss://api.huobi.com/ws
+
 socket.binaryType = 'arraybuffer';
 
 socket.onopen = function (event) {
